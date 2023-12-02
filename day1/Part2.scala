@@ -1,22 +1,8 @@
 import scala.io.Source._
 
-object Main
+object Part2
 {
-  // indexOf == value
-  val numbers = Array(
-    "zero", 
-    "one", 
-    "two", 
-    "three", 
-    "four", 
-    "five", 
-    "six", 
-    "seven", 
-    "eight", 
-    "nine"
-  )
-
-
+  val numbers = Array("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
 
   def main(args: Array[String]) = {
     val lines = fromFile("input.txt").getLines
@@ -40,40 +26,30 @@ object Main
       })
       
       if (left == -1) {
-        findLeft(line, i, lbuff) match
+        find(line, i) match
           case Left(num) => left = num
-          case Right(buff) => lbuff = buff
+          case Right(buff) => lbuff = lbuff + buff
       }
       if (right == -1) {
-        findRight(line, i, rbuff) match
+        find(line, line.length - i - 1) match
           case Left(num) => right = num
-          case Right(buff) => rbuff = buff
+          case Right(buff) => rbuff = buff + rbuff
       }
       if (left != -1 && right != -1) {
-        println("left: " + left + "[" + lbuff + "], right: " + right + "[" + rbuff + "] line: " + line)
         return 10*left + right;
       }
     }
-
     return 10*left + right; 
   }
 
-
-
-  def findLeft(line: String, i: Int, buff: String): Either[Int,String] = {
-    var c: Char = line.charAt(i)
+  def find(line: String, i: Int): Either[Int,String] = {
+    val c:Char = line charAt i
     if (isNumber(c)) {
       return Left(c.toInt - 48)
     }
-    Right(buff + c)
-  }
-
-  def findRight(line: String, i: Int, buff: String): Either[Int, String] = {  
-    var c: Char = line.charAt(line.length - i - 1)
-    if (isNumber(c)) {
-     return Left(c.toInt - 48)
+    else { 
+      Right(c.toString)
     }
-    return Right(c + buff)
   }
 
   def isNumber(c: Char): Boolean = {
