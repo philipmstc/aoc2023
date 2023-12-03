@@ -11,7 +11,7 @@ object Part2 {
 
   def power(line: String): Int = {
     val draws: Array[Colors] = line.split(":")(1).split(";").map(getColors)
-    draws.map(c => c.red).reduceLeft(_ max _) * draws.map(c => c.green).reduceLeft(_ max _) * draws.map(c => c.blue).reduceLeft(_ max _)
+    draws.map(c => c.red).max * draws.map(c => c.green).max * draws.map(c => c.blue).max
   }
 
   def getColors(draw: String): Colors = {
