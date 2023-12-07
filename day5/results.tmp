@@ -1,0 +1,115 @@
+seeds was matched
+SEED -> SOIL {2}
+SOIL -> FERTILIZER {3}
+FERTILIZER -> WATER {4}
+WATER -> LIGHT {2}
+LIGHT -> TEMPERATURE {3}
+TEMPERATURE -> HUMIDITY {2}
+HUMIDITY -> LOCATION {2}
+Finding SEED => SOIL
+seed 79 in range ? [98, 100) false
+seed 79 in range ? [50, 98) true
+seed 79 ==> 81
+Finding SOIL => FERTILIZER
+seed 81 in range ? [15, 52) false
+seed 81 in range ? [52, 54) false
+seed 81 in range ? [0, 15) false
+Finding FERTILIZER => WATER
+seed 81 in range ? [53, 61) false
+seed 81 in range ? [11, 53) false
+seed 81 in range ? [0, 7) false
+seed 81 in range ? [7, 11) false
+Finding WATER => LIGHT
+seed 81 in range ? [18, 25) false
+seed 81 in range ? [25, 95) true
+seed 81 ==> 74
+Finding LIGHT => TEMPERATURE
+seed 74 in range ? [77, 100) false
+seed 74 in range ? [45, 64) false
+seed 74 in range ? [64, 77) true
+seed 74 ==> 78
+Finding TEMPERATURE => HUMIDITY
+seed 78 in range ? [69, 70) false
+seed 78 in range ? [0, 69) false
+Finding HUMIDITY => LOCATION
+seed 78 in range ? [56, 93) true
+seed 78 ==> 82
+Finding SEED => SOIL
+seed 14 in range ? [98, 100) false
+seed 14 in range ? [50, 98) false
+Finding SOIL => FERTILIZER
+seed 14 in range ? [15, 52) false
+seed 14 in range ? [52, 54) false
+seed 14 in range ? [0, 15) true
+seed 14 ==> 53
+Finding FERTILIZER => WATER
+seed 53 in range ? [53, 61) true
+seed 53 ==> 49
+Finding WATER => LIGHT
+seed 49 in range ? [18, 25) false
+seed 49 in range ? [25, 95) true
+seed 49 ==> 42
+Finding LIGHT => TEMPERATURE
+seed 42 in range ? [77, 100) false
+seed 42 in range ? [45, 64) false
+seed 42 in range ? [64, 77) false
+Finding TEMPERATURE => HUMIDITY
+seed 42 in range ? [69, 70) false
+seed 42 in range ? [0, 69) true
+seed 42 ==> 43
+Finding HUMIDITY => LOCATION
+seed 43 in range ? [56, 93) false
+seed 43 in range ? [93, 97) false
+Finding SEED => SOIL
+seed 55 in range ? [98, 100) false
+seed 55 in range ? [50, 98) true
+seed 55 ==> 57
+Finding SOIL => FERTILIZER
+seed 57 in range ? [15, 52) false
+seed 57 in range ? [52, 54) false
+seed 57 in range ? [0, 15) false
+Finding FERTILIZER => WATER
+seed 57 in range ? [53, 61) true
+seed 57 ==> 53
+Finding WATER => LIGHT
+seed 53 in range ? [18, 25) false
+seed 53 in range ? [25, 95) true
+seed 53 ==> 46
+Finding LIGHT => TEMPERATURE
+seed 46 in range ? [77, 100) false
+seed 46 in range ? [45, 64) true
+seed 46 ==> 82
+Finding TEMPERATURE => HUMIDITY
+seed 82 in range ? [69, 70) false
+seed 82 in range ? [0, 69) false
+Finding HUMIDITY => LOCATION
+seed 82 in range ? [56, 93) true
+seed 82 ==> 86
+Finding SEED => SOIL
+seed 13 in range ? [98, 100) false
+seed 13 in range ? [50, 98) false
+Finding SOIL => FERTILIZER
+seed 13 in range ? [15, 52) false
+seed 13 in range ? [52, 54) false
+seed 13 in range ? [0, 15) true
+seed 13 ==> 52
+Finding FERTILIZER => WATER
+seed 52 in range ? [53, 61) false
+seed 52 in range ? [11, 53) true
+seed 52 ==> 41
+Finding WATER => LIGHT
+seed 41 in range ? [18, 25) false
+seed 41 in range ? [25, 95) true
+seed 41 ==> 34
+Finding LIGHT => TEMPERATURE
+seed 34 in range ? [77, 100) false
+seed 34 in range ? [45, 64) false
+seed 34 in range ? [64, 77) false
+Finding TEMPERATURE => HUMIDITY
+seed 34 in range ? [69, 70) false
+seed 34 in range ? [0, 69) true
+seed 34 ==> 35
+Finding HUMIDITY => LOCATION
+seed 35 in range ? [56, 93) false
+seed 35 in range ? [93, 97) false
+35
