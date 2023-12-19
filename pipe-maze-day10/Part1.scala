@@ -20,6 +20,7 @@ object Part1 {
   def main(args: Array[String]) = { 
     
     var globalMax: Int = 0
+    var localMax: Int = -1
     val lines: Array[String] = fromFile(args(0)).getLines.toArray
     val board: Array[Array[Int]] = lines.map(l => l.map(c => {
       c match 
@@ -28,34 +29,28 @@ object Part1 {
       }).toArray
     ).toArray
     var target: Char = 'S'
-    var anyAdjacentsRemain: Boolean = true
-    while (anyAdjacentsRemain) {
-      
+    while (localMax != globalMax) {        
+      localMax = globalMax
       for(y <- 0 until lines.size) {
         for(x <- 0 until lines(y).length) {
           if (board(y)(x) > 0) {
             if (board(y)(x) > globalMax) {
               globalMax = board(y)(x)
-              println(globalMax)
             }
             val adjacents: Array[Char] = 
               Array(north(board, lines, x,y), east(board, lines, x,y), south(board, lines, x,y), west(board, lines,x,y))
-            //println(s"(${x}, ${y})[${lines(y)(x)}]: ${adjacents.mkString(",")}")
-
             adjacents.zipWithIndex.filter { e => isAdjacent(lines(y)(x), e._1, e._2) }.foreach {e =>
-              //println(s"${e._1} is adjacent to ${lines(y)(x)}")
               e._2 match 
                 case 0 => board(y-1)(x) = board(y)(x) + 1 
                 case 1 => board(y)(x+1) = board(y)(x) + 1
                 case 2 => board(y+1)(x) = board(y)(x) + 1
                 case 3 => board(y)(x-1) = board(y)(x) + 1
             }
-            //board.foreach{l=> println(l.mkString(""))}
-          
           }
         }
-      } 
+      }
     }
+    println(globalMax - 1)
   }
 
   def isAdjacent(cell: Char, other: Char, dir: Int): Boolean = { 
@@ -86,5 +81,4 @@ object Part1 {
       case x if vals(y)(x-1) > 0 => '.'
       case x => board(y)(x-1)
   }
-
 }
